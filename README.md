@@ -16,13 +16,13 @@ npm install fb-ts
 
 ```js
 // Using ES2015 import
-import FB, {FacebookApiException} from 'fb';
+import FB, {FacebookApiException} from 'fb-ts';
 
 // Using require() in ES2015
-const {FB, FacebookApiException} = require('fb');
+const {FB, FacebookApiException} = require('fb-ts');
 
 // Using require() in ES5
-var FB = require('fb').default;
+var FB = require('fb-ts').default;
 ```
 
 ## Library usage
@@ -31,15 +31,15 @@ Libraries can isolate themselves from the options belonging to the default `FB` 
 
 ```js
 // ES2015 modules
-import {Facebook, FacebookApiException} from 'fb';
+import {Facebook, FacebookApiException} from 'fb-ts';
 const fb = new Facebook(options);
 
 // ES2015 w/ require()
-const {Facebook, FacebookApiException} = require('fb'),
+const {Facebook, FacebookApiException} = require('fb-ts'),
 const fb = new Facebook(options);
 
 // ES5
-var Facebook = require('fb').Facebook,
+var Facebook = require('fb-ts').Facebook,
     fb = new Facebook(options);
 ```
 
@@ -583,7 +583,7 @@ The promises returned are native Promises. However you can override the promise 
 
 ```js
 // Promise option
-import FB from 'fb';
+import FB from 'fb-ts';
 
 FB.options({
     Promise: require('bluebird')
@@ -591,7 +591,7 @@ FB.options({
 let response = await FB.api('4');
 
 // Promise option in a library
-import {Facebook} from 'fb';
+import {Facebook} from 'fb-ts';
 var fb = new Facebook({
     Promise: require('bluebird')
 });
@@ -632,7 +632,7 @@ npm install step
 ### FB.api with Step
 
 ```js
-var FB      = require('fb').default,
+var FB      = require('fb-ts').default,
     Step    = require('step');
 
 Step(
@@ -658,7 +658,7 @@ Step(
 Simplified version of facebook-node-sdk async callbacks using `FB.napi`.
 
 ```js
-var FB      = require('fb').default,
+var FB      = require('fb-ts').default,
     Step    = require('step');
 
 Step(
