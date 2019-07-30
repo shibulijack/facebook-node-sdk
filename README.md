@@ -2,16 +2,16 @@
 
 With facebook-node-sdk you can now easily write the same code and share between your server (nodejs) and the client ([Facebook Javascript SDK](https://developers.facebook.com/docs/reference/javascript/)).
 
-**Author:** [Thuzi](http://www.thuzi.com)
+**Original Author:** [Thuzi](http://www.thuzi.com)
 
-**Contributor** [Shibu Lijack](https://github.com/shibulijack)
+**Contributor:** [Shibu Lijack](https://github.com/shibulijack)
 
 **License:** Apache v2
 
 # Installing facebook-node-sdk
 
 ```
-npm install fb
+npm install fb-ts
 ```
 
 ```js
