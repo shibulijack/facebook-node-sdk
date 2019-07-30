@@ -1,6 +1,6 @@
 {
   "name": "fb-ts",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "NodeJS Library for Facebook [TypeScript compatible]",
   "keywords": [
     "facebook",
@@ -24,8 +24,8 @@
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint .",
-    "build": "babel src/ -d lib/",
-    "buildw": "babel -w src/ -d lib/",
+    "build": "babel src/ -d lib/ --copy-files",
+    "buildw": "babel -w src/ -d lib/ --copy-files",
     "test": "npm run build && node ./node_modules/mocha/bin/mocha --recursive",
     "test-live": "npm run build && node ./node_modules/mocha/bin/mocha --require test_live/_supports/ci-safe --recursive test_live",
     "prepublish": "npm run build"
