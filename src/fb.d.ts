@@ -10,18 +10,6 @@ interface FBOptions {
     Promise?: Promise<any>;
 }
 
-interface FBAPIInterface {
-    path: string;
-    method?: string;
-    params?: object;
-    callback?: Function;
-}
-
-interface FBKeyOrOptions {
-    key: string;
-    options: FBOptions;
-}
-
 interface SignedRequestResponse {
     oauthToken: string;
     userId: string;
@@ -34,10 +22,27 @@ interface UsageInterface {
     totalCPUTime: number;
 }
 
+interface FBError {
+    name: string;
+    message: string;
+    response: number;
+}
+
+interface FBResponseObject {
+    data: any;
+    error: any;
+}
+
 export class Facebook {
     constructor(options?: FBOptions);
 
-    api(arguments: FBAPIInterface): Promise<any>;
+    api(path: string): Promise<any>;
+
+    api(path: string, method: string): Promise<any>;
+
+    api(path: string, params: any): Promise<any>;
+
+    api(path: string, method: string, params: any): Promise<any>;
 
     extend(options: FBOptions): Facebook;
 
@@ -49,9 +54,19 @@ export class Facebook {
 
     getLoginUrl(options: FBOptions): string;
 
-    napi(arguments: FBAPIInterface): void;
+    napi(path: string): void;
 
-    options(keyOrOptions: keyof FBKeyOrOptions): any;
+    napi(path: string, method: string): void;
+
+    napi(path: string, params: any): void;
+
+    napi(path: string, method: string, params: any): void;
+
+    options(): FBOptions;
+
+    options(key: string): string;
+
+    options(options: FBOptions): void;
 
     parseSignedRequest(signedRequest: string, appSecret: string): SignedRequestResponse;
 
@@ -62,6 +77,6 @@ export class Facebook {
 
 export const version: string;
 
-export function FacebookApiException(res: Response): Error;
+export function FacebookApiException(res: FBResponseObject): FBError;
 
 export const FB: Facebook;
