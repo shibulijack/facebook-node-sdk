@@ -7,33 +7,61 @@ interface FBOptions {
     timeout?: number;
     scope?: string;
     redirectUri?: string;
-    Promise?: Promise;
+    Promise?: Promise<any>;
+}
+
+interface FBAPIInterface {
+    path: string;
+    method?: string;
+    params?: object;
+    callback?: Function;
+}
+
+interface FBKeyOrOptions {
+    key: string;
+    options: FBOptions;
+}
+
+interface SignedRequestResponse {
+    oauthToken: string;
+    userId: string;
+    userCountry: string;
+}
+
+interface UsageInterface {
+    callCount: number;
+    totalTime: number;
+    totalCPUTime: number;
 }
 
 export class Facebook {
-    constructor(options: FBOptions);
+    constructor(options?: FBOptions);
 
-    api(...args): Promise<any>;
+    api(arguments: FBAPIInterface): Promise<any>;
 
     extend(options: FBOptions): Facebook;
 
     getAccessToken(): string;
 
-    getLoginUrl(): string;
+    getAppUsage(): UsageInterface;
 
-    napi(...args): Promise<any>;
+    getPageUsage(): UsageInterface;
 
-    options(keyOrOptions: FBOptions): FBOptions;
+    getLoginUrl(options: FBOptions): string;
 
-    parseSignedRequest(signedRequest: string, ...args): Object;
+    napi(arguments: FBAPIInterface): void;
+
+    options(keyOrOptions: keyof FBKeyOrOptions): any;
+
+    parseSignedRequest(signedRequest: string, appSecret: string): SignedRequestResponse;
 
     setAccessToken(accessToken: string): void;
 
-    withAccessToken(accessToken: string): any;
+    withAccessToken(accessToken: string): Facebook;
 }
 
 export const version: string;
 
-export function FacebookApiException(res: Response): void;
+export function FacebookApiException(res: Response): Error;
 
 export const FB: Facebook;

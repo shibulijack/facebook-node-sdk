@@ -9,8 +9,7 @@
   ],
   "author": "Thuzi LLC <pshrestha@thuzi.com> (https://github.com/Thuzi)",
   "contributors": [
-    "Daniel Friesen <d@danf.ca> (http://danf.ca)",
-    "Shibu Lijack <shibulijack@gmail.com> (https://github.com/shibulijack"
+    "Daniel Friesen <d@danf.ca> (http://danf.ca)"
   ],
   "homepage": "https://github.com/node-facebook/facebook-node-sdk",
   "license": "Apache-2.0",
