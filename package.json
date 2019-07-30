@@ -1,6 +1,6 @@
 {
   "name": "fb-ts",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "NodeJS Library for Facebook [TypeScript compatible]",
   "keywords": [
     "facebook",
@@ -13,11 +13,11 @@
     "Shibu Lijack <shibulijack@gmail.com> (https://github.com/shibulijack)",
     "Daniel Friesen <d@danf.ca> (http://danf.ca)"
   ],
-  "homepage": "https://github.com/node-facebook/facebook-node-sdk",
+  "homepage": "https://github.com/shibulijack/facebook-node-sdk",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/node-facebook/facebook-node-sdk.git"
+    "url": "https://github.com/shibulijack/facebook-node-sdk.git"
   },
   "main": "./lib/fb.js",
   "types": "./lib/fb.d.ts",
